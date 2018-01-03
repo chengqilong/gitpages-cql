@@ -1,0 +1,29 @@
+<code class="language-yum hljs http">language: node_js
+node_js: stable
+ 
+# Start: Build Lifecycle
+install:
+  - npm install
+ 
+ 
+#before_script:
+ # - npm install -g gulp
+ 
+script:
+  - hexo g
+ 
+after_script:
+  - git config user.name "chengqilong"
+  - git config user.email "2428744036@qq.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${gitToken}@${GH_REF}" master:master
+
+# End: Build LifeCycle
+ 
+branches:
+  only:
+    - master
+env:
+ global:
+   - GH_REF: github.com/chengqilong/gitpages-cql.git</code>
