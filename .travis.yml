@@ -1,4 +1,5 @@
-<code class="language-yum hljs http">language: node_js
+
+language: node_js
 node_js: stable
  
 # Start: Build Lifecycle
@@ -26,4 +27,4 @@ branches:
     - master
 env:
  global:
-   - GH_REF: github.com/chengqilong/gitpages-cql.git</code>
+   - GH_REF: github.com/chengqilong/gitpages-cql.git
